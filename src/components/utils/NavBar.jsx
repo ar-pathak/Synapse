@@ -202,7 +202,7 @@ const SearchBar = ({ isLoggedIn, onSearch }) => {
                                 </svg>
                                 <span>Search for "{searchQuery}"</span>
                             </div>
-                            
+
                             {/* Suggestions */}
                             {suggestions.length > 0 && (
                                 <div className="mb-4">
@@ -215,7 +215,7 @@ const SearchBar = ({ isLoggedIn, onSearch }) => {
                                     />
                                 </div>
                             )}
-                            
+
                             <button
                                 onClick={() => handleSearch(searchQuery)}
                                 className="w-full text-left px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-white/80 hover:bg-white/10 transition-colors duration-200 text-xs sm:text-sm"
@@ -234,7 +234,7 @@ const SearchBar = ({ isLoggedIn, onSearch }) => {
                                     icon="clock"
                                 />
                             )}
-                            
+
                             {/* Trending Skills */}
                             {trendingSearches.skills.length > 0 && (
                                 <TrendingSkills
@@ -242,7 +242,7 @@ const SearchBar = ({ isLoggedIn, onSearch }) => {
                                     onSkillClick={handleSearch}
                                 />
                             )}
-                            
+
                             {/* Popular Users */}
                             {trendingSearches.users.length > 0 && (
                                 <SearchSection
@@ -491,8 +491,8 @@ const MobileMenu = ({ isOpen, onClose, isActive }) => {
                     <Link
                         to="/feed"
                         className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${isActive('/feed')
-                                ? 'bg-white/10 text-white'
-                                : 'text-white/60 hover:text-white hover:bg-white/5'
+                            ? 'bg-white/10 text-white'
+                            : 'text-white/60 hover:text-white hover:bg-white/5'
                             }`}
                         onClick={onClose}
                     >
@@ -501,8 +501,8 @@ const MobileMenu = ({ isOpen, onClose, isActive }) => {
                     <Link
                         to="/explore"
                         className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${isActive('/explore')
-                                ? 'bg-white/10 text-white'
-                                : 'text-white/60 hover:text-white hover:bg-white/5'
+                            ? 'bg-white/10 text-white'
+                            : 'text-white/60 hover:text-white hover:bg-white/5'
                             }`}
                         onClick={onClose}
                     >
@@ -511,8 +511,8 @@ const MobileMenu = ({ isOpen, onClose, isActive }) => {
                     <Link
                         to="/bookmarks"
                         className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${isActive('/bookmarks')
-                                ? 'bg-white/10 text-white'
-                                : 'text-white/60 hover:text-white hover:bg-white/5'
+                            ? 'bg-white/10 text-white'
+                            : 'text-white/60 hover:text-white hover:bg-white/5'
                             }`}
                         onClick={onClose}
                     >
@@ -582,13 +582,13 @@ const NavBar = () => {
         toastElement.className = `fixed top-4 right-4 ${type === 'success' ? 'bg-green-500' : 'bg-red-500'} text-white px-6 py-3 rounded-lg shadow-lg z-50 flex items-center gap-2`;
         toastElement.style.transform = 'translateX(120%)'; // Start off-screen
         toastElement.style.transition = 'transform 0.3s ease-out';
-        
+
         const icon = type === 'success' ? (
             '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>'
         ) : (
             '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" /></svg>'
         );
-        
+
         toastElement.innerHTML = `
             <div class="flex-shrink-0">${icon}</div>
             <p class="flex-1">${message}</p>
@@ -598,17 +598,17 @@ const NavBar = () => {
                 </svg>
             </button>
         `;
-        
+
         document.body.appendChild(toastElement);
-        
+
         // Force a reflow to ensure the initial transform is applied
         toastElement.offsetHeight;
-        
+
         // Animate in
         requestAnimationFrame(() => {
             toastElement.style.transform = 'translateX(0)';
         });
-        
+
         // Add click handler for close button
         const closeButton = toastElement.querySelector('button');
         closeButton.addEventListener('click', () => {
@@ -619,7 +619,7 @@ const NavBar = () => {
                 }
             }, 300);
         });
-        
+
         // Auto remove after 3 seconds
         setTimeout(() => {
             if (document.body.contains(toastElement)) {
@@ -642,10 +642,10 @@ const NavBar = () => {
             // Clear any local storage or session storage if needed
             localStorage.removeItem('userPreferences');
             sessionStorage.clear();
-            
+
             // Show success message
             showToast('Successfully signed out. See you soon! 👋');
-            
+
             navigate('/');
         } catch (error) {
             console.error('Logout error:', error);
@@ -672,17 +672,17 @@ const NavBar = () => {
                         <div className="flex items-center gap-2 sm:gap-4">
                             <Link
                                 to="/"
-                                className="text-lg sm:text-xl font-extrabold text-white tracking-wide hover:bg-white/10 px-1 sm:px-2 py-1 rounded-lg transition-colors duration-200"
+                                className="text-lg flex items-center sm:text-xl font-extrabold text-white tracking-wide hover:bg-white/10 px-1 sm:px-2 py-1 rounded-lg transition-colors duration-200"
                             >
-                                SYNAPSE
+                                <img src="/img/synapse_icon.png" alt="" className='w-10 h-10 mr-1' /> SYNAPSE
                             </Link>
                             {userinfo?.isLoggedIn && (
                                 <div className="hidden md:flex items-center gap-2">
                                     <Link
                                         to="/feed"
                                         className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${isActive('/feed')
-                                                ? 'bg-white/10 text-white'
-                                                : 'text-white/60 hover:text-white hover:bg-white/5'
+                                            ? 'bg-white/10 text-white'
+                                            : 'text-white/60 hover:text-white hover:bg-white/5'
                                             }`}
                                     >
                                         Feed
@@ -690,8 +690,8 @@ const NavBar = () => {
                                     <Link
                                         to="/explore"
                                         className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${isActive('/explore')
-                                                ? 'bg-white/10 text-white'
-                                                : 'text-white/60 hover:text-white hover:bg-white/5'
+                                            ? 'bg-white/10 text-white'
+                                            : 'text-white/60 hover:text-white hover:bg-white/5'
                                             }`}
                                     >
                                         Explore
@@ -699,8 +699,8 @@ const NavBar = () => {
                                     <Link
                                         to="/bookmarks"
                                         className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${isActive('/bookmarks')
-                                                ? 'bg-white/10 text-white'
-                                                : 'text-white/60 hover:text-white hover:bg-white/5'
+                                            ? 'bg-white/10 text-white'
+                                            : 'text-white/60 hover:text-white hover:bg-white/5'
                                             }`}
                                     >
                                         Bookmarks

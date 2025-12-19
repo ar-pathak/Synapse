@@ -297,7 +297,7 @@ const SignUp = () => {
           {/* Left Content */}
           <div className="flex-1 text-center lg:text-left max-w-lg">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
-              Join Devtinder
+              Join Synapse
             </h1>
             <p className="text-white/60 text-base sm:text-lg mb-6 sm:mb-8">
               Create your account and start connecting with developers from
