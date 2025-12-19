@@ -15,7 +15,7 @@ const LoginContainer = () => {
                         <div className="w-24 h-24 mb-6 bg-white/5 backdrop-blur-sm rounded-2xl flex items-center justify-center ring-1 ring-white/10 hover:ring-white/20 transition-all duration-300">
                             <img src="/logo192.png" alt="App Logo" className="w-20 h-20" />
                         </div>
-                        <h1 className="text-6xl font-bold text-white drop-shadow-lg tracking-tight mb-3">Devtinder</h1>
+                        <h1 className="text-6xl font-bold text-white drop-shadow-lg tracking-tight mb-3">Synapse</h1>
                         <p className="text-white/60 text-xl max-w-md text-center">
                             Connect with developers worldwide and build amazing things together
                         </p>

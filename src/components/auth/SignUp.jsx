@@ -148,10 +148,10 @@ const SignUp = () => {
       if (result.success) {
         // Show success toast
         toast.success("Account created successfully! Please check your email for verification. 📧");
-        
+
         // Show verification popup instead of immediately navigating
-        const message = typeof result.data.message === 'string' 
-          ? result.data.message 
+        const message = typeof result.data.message === 'string'
+          ? result.data.message
           : "User created successfully. Please check your email for verification.";
         setVerificationMessage(message);
         setShowVerificationPopup(true);
@@ -160,8 +160,8 @@ const SignUp = () => {
         // dispatch(setIsLoggedIn(true));
         // navigate('/feed');
       } else {
-        const errorMessage = typeof result.error === 'string' 
-          ? result.error 
+        const errorMessage = typeof result.error === 'string'
+          ? result.error
           : "An error occurred during signup. Please try again.";
         setApiError(errorMessage);
         toast.error(errorMessage);
@@ -372,9 +372,8 @@ const SignUp = () => {
                   <div className="relative">
                     <input
                       type="text"
-                      className={`w-full px-4 py-2.5 sm:py-3 bg-white/5 border ${
-                        errors.fullName ? "border-red-500" : "border-white/10"
-                      } rounded-lg text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/20 transition`}
+                      className={`w-full px-4 py-2.5 sm:py-3 bg-white/5 border ${errors.fullName ? "border-red-500" : "border-white/10"
+                        } rounded-lg text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/20 transition`}
                       placeholder="Enter your full name"
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
@@ -407,9 +406,8 @@ const SignUp = () => {
                   <div className="relative">
                     <input
                       type="email"
-                      className={`w-full px-4 py-2.5 sm:py-3 bg-white/5 border ${
-                        errors.email ? "border-red-500" : "border-white/10"
-                      } rounded-lg text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/20 transition`}
+                      className={`w-full px-4 py-2.5 sm:py-3 bg-white/5 border ${errors.email ? "border-red-500" : "border-white/10"
+                        } rounded-lg text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/20 transition`}
                       placeholder="Enter your email"
                       value={emailId}
                       onChange={(e) => setEmailId(e.target.value)}
@@ -439,9 +437,8 @@ const SignUp = () => {
                   <div className="relative">
                     <input
                       type={showPassword ? "text" : "password"}
-                      className={`w-full px-4 py-2.5 sm:py-3 bg-white/5 border ${
-                        errors.password ? "border-red-500" : "border-white/10"
-                      } rounded-lg text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/20 transition`}
+                      className={`w-full px-4 py-2.5 sm:py-3 bg-white/5 border ${errors.password ? "border-red-500" : "border-white/10"
+                        } rounded-lg text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/20 transition`}
                       placeholder="Create a password"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
@@ -495,11 +492,10 @@ const SignUp = () => {
                   <div className="relative">
                     <input
                       type={showConfirmPassword ? "text" : "password"}
-                      className={`w-full px-4 py-2.5 sm:py-3 bg-white/5 border ${
-                        errors.confirmPassword
+                      className={`w-full px-4 py-2.5 sm:py-3 bg-white/5 border ${errors.confirmPassword
                           ? "border-red-500"
                           : "border-white/10"
-                      } rounded-lg text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/20 transition`}
+                        } rounded-lg text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/20 transition`}
                       placeholder="Confirm your password"
                       value={confirmPassword}
                       onChange={(e) => setConfirmPassword(e.target.value)}
@@ -582,11 +578,10 @@ const SignUp = () => {
                 <button
                   type="submit"
                   disabled={!isFormValid() || isSubmitting}
-                  className={`w-full py-2.5 sm:py-3 px-4 rounded-lg font-semibold transition ${
-                    isFormValid() && !isSubmitting
+                  className={`w-full py-2.5 sm:py-3 px-4 rounded-lg font-semibold transition ${isFormValid() && !isSubmitting
                       ? "bg-white text-[#1A1B1E] hover:bg-white/90"
                       : "bg-gray-500 text-gray-300 cursor-not-allowed"
-                  }`}
+                    }`}
                 >
                   {isSubmitting ? (
                     <div className="flex items-center justify-center gap-2">
