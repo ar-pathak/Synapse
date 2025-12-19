@@ -1,0 +1,76 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@keyframes modalIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes toastIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes toastOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Glassmorphism and Modal Styles */
+.glass-card {
+    @apply bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20 shadow-xl transition-all duration-300;
+}
+
+/* Floating Label Styles */
+.floating-label-group {
+    @apply relative;
+}
+
+.floating-input {
+    @apply w-full px-4 py-3 bg-[#2a2b32] text-white rounded-lg border border-white/20 outline-none focus:ring-2 focus:ring-[#3B82F6] focus:border-[#3B82F6] transition-all duration-200 placeholder-transparent;
+}
+
+.floating-label {
+    @apply absolute left-4 top-3 text-white/60 pointer-events-none transition-all duration-200 text-sm;
+}
+
+.floating-input:focus + .floating-label,
+.floating-input:not(:placeholder-shown) + .floating-label {
+    @apply -top-2 left-3 text-xs text-[#3B82F6] bg-[#23242a] px-2;
+}
+
+/* Chip Styles */
+.chip-skill {
+    @apply px-3 py-1 bg-gradient-to-r from-[#3B82F6]/20 to-[#60A5FA]/20 text-[#3B82F6] rounded-full text-sm font-semibold shadow border border-[#3B82F6]/30;
+}
+
+.chip-interest {
+    @apply px-3 py-1 bg-gradient-to-r from-[#10B981]/20 to-[#06b6d4]/20 text-[#10B981] rounded-full text-sm font-semibold shadow border border-[#10B981]/30;
+}
+
+/* Hover effects for chips */
+.chip-skill:hover {
+    @apply from-[#3B82F6]/30 to-[#60A5FA]/30 border-[#3B82F6]/50;
+}
+
+.chip-interest:hover {
+    @apply from-[#10B981]/30 to-[#06b6d4]/30 border-[#10B981]/50;
+}
