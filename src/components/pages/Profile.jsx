@@ -33,7 +33,7 @@ const Profile = () => {
       setError(null);
 
       try {
-        const response = await axios.get(`${API_URL}/api/users/${userId}`, {
+        const response = await axios.get(`${API_URL}/api/users/${userId.id}`, {
           withCredentials: true,
         });
         dispatch(setUserinfo(response.data));
@@ -81,38 +81,6 @@ const Profile = () => {
   );
 
   // Tab content renderers
-  const renderOverview = () => (
-    <motion.div
-      key="overview"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.4 }}
-      className="space-y-6"
-    >
-      <div className="glass-card">
-        <h3 className="text-xl font-semibold mb-2">About</h3>
-        <p className="text-white/80">{userinfo?.bio || "No bio added yet."}</p>
-      </div>
-
-      <div className="glass-card">
-        <h3 className="text-xl font-semibold mb-4">Skills & Interests</h3>
-        <div className="flex flex-wrap gap-3">
-          {(userinfo?.skills || []).map((skill) => (
-            <span key={skill} className="chip-skill">
-              {skill}
-            </span>
-          ))}
-          {(userinfo?.interests || []).map((interest) => (
-            <span key={interest} className="chip-interest">
-              {interest}
-            </span>
-          ))}
-        </div>
-      </div>
-    </motion.div>
-  );
-
   const renderActivity = () => (
     <motion.div
       key="activity"
